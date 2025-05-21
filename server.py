@@ -21,7 +21,7 @@ async def gitingest_repo(
         str: Content digest of the repository
     """
     assert source
-    summary, _, content = await ingest_async(
+    _, _, content = await ingest_async(
         source=source,
         include_patterns=include_patterns,
         exclude_patterns=exclude_patterns
@@ -47,7 +47,7 @@ async def gitingest_tree(
         str: Tree structure of the repository
     """
     assert source
-    summary, tree, _ = await ingest_async(source=source,
+    _, tree, _ = await ingest_async(source=source,
                                     include_patterns=include_patterns,
                                     exclude_patterns=exclude_patterns)
     return tree
