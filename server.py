@@ -18,7 +18,7 @@ async def gitingest_repo(
         exclude_patterns: Optional patterns to exclude (comma separated) e.g.: ".jpeg,.gif,.jpg,.png,.svg,.mp4,.bin"
 
     Returns:
-        str: Content digest of the repository
+        str: Summary and Content digest of the repository
     """
     assert source
     summary, _, content = await ingest_async(
@@ -44,13 +44,13 @@ async def gitingest_tree(
         exclude_patterns: Optional patterns to exclude (comma separated) e.g.: ".jpeg,.gif,.jpg,.png,.svg,.mp4,.bin"
 
     Returns:
-        str: Summary and tree structure of the repository
+        str: Summary and Tree structure of the repository
     """
     assert source
-    _, tree, _ = await ingest_async(source=source,
+    summary, tree, _ = await ingest_async(source=source,
                                     include_patterns=include_patterns,
                                     exclude_patterns=exclude_patterns)
-    return f"{tree}"
+    return f"{summary}\n\n{tree}"
 
 if __name__ == "__main__":
     mcp.run(transport="streamable-http")
