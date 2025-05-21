@@ -14,19 +14,19 @@ async def gitingest_repo(
 
     Args:
         repo_path_or_url: A GitHub URL or local path
-        include_patterns: Optional patterns to include (comma separated)
-        exclude_patterns: Optional patterns to exclude (comma separated)
+        include_patterns: Optional patterns to include (comma separated) e.g.: ".java,.ts,.js,.xml"
+        exclude_patterns: Optional patterns to exclude (comma separated) e.g.: ".jpeg,.gif,.jpg,.png,.svg,.mp4,.bin"
 
     Returns:
         str: Content digest of the repository
     """
     assert source
-    _, _, content = await ingest_async(
+    summary, _, content = await ingest_async(
         source=source,
         include_patterns=include_patterns,
         exclude_patterns=exclude_patterns
     )
-    return content
+    return f"{summary}\n\n{content}"
 
 
 @mcp.tool()
