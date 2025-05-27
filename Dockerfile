@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-ENTRYPOINT ["python3", "main.py"]
+ENTRYPOINT ["python3", "src/main.py"]
