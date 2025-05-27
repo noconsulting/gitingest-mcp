@@ -1,9 +1,6 @@
-from mcp.server.fastmcp import FastMCP
-from gitingest import ingest_async
-from gitingest import Tokenizer
+from gitingest import ingest_async, Tokenizer
 
-mcp: FastMCP = FastMCP("GitIngest")
-
+from server import mcp
 
 @mcp.tool()
 async def gitingest_repo(
@@ -81,6 +78,3 @@ async def gitingest_summary(
                                        exclude_patterns=exclude_patterns,
                                        model_tokenizer=Tokenizer[model_tokenizer])
     return summary
-
-if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
