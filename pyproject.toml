@@ -5,8 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "gitingest",
-    "mcp[cli]>=1.7.1",
+    "fastmcp>=2.5.1",
+    "gitingest"
 ]
 
 [tool.uv.sources]
