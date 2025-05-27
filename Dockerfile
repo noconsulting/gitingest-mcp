@@ -1,6 +1,6 @@
 FROM python:3.12.8
 
-LABEL authors=py-mcp
+LABEL authors=[PGenly,Exifs]
 
 COPY . .
 
@@ -8,4 +8,4 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8000
 
-ENTRYPOINT ["python3", "server.py"]
+ENTRYPOINT ["python3", "main.py"]

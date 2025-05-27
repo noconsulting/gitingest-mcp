@@ -1,5 +1,10 @@
 # installation
 
 ```shell
-pip install -r requirements.txt
+uv venv
+uv pip install -r requirements.txt
+```
+
+```shell
+uv run main.py
 ```
