@@ -6,5 +6,5 @@ uv pip install -r requirements.txt
 ```
 
 ```shell
-uv run index.py
+uv run main.py
 ```
