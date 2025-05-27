@@ -1,1 +1,1 @@
-from index import mcp
+import tools.index

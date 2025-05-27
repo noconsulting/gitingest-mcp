@@ -1,6 +1,6 @@
 from gitingest import ingest_async, Tokenizer
 
-from src.server import mcp
+from server import mcp
 
 @mcp.tool()
 async def gitingest_repo(
